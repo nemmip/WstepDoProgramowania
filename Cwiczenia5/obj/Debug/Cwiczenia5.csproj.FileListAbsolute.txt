@@ -1,0 +1,7 @@
+C:\Users\julka\source\repos\Cwiczenia5\bin\Debug\Cwiczenia5.exe.config
+C:\Users\julka\source\repos\Cwiczenia5\bin\Debug\Cwiczenia5.exe
+C:\Users\julka\source\repos\Cwiczenia5\bin\Debug\Cwiczenia5.pdb
+C:\Users\julka\source\repos\Cwiczenia5\obj\Debug\Cwiczenia5.csprojAssemblyReference.cache
+C:\Users\julka\source\repos\Cwiczenia5\obj\Debug\Cwiczenia5.csproj.CoreCompileInputs.cache
+C:\Users\julka\source\repos\Cwiczenia5\obj\Debug\Cwiczenia5.exe
+C:\Users\julka\source\repos\Cwiczenia5\obj\Debug\Cwiczenia5.pdb
