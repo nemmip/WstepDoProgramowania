@@ -134,8 +134,8 @@ namespace Cwiczenia5
         }
         static void Zadanie5()
         {
-            int wysokosc = Console.WindowWidth(), szerokosc = Console.WindowHeight();
-            int n;
+            int wysokosc = Console.WindowWidth, szerokosc = Console.WindowHeight;
+            int n, czas = 200;
             if (wysokosc>szerokosc)
                 n=szerokosc;
             else
@@ -143,10 +143,30 @@ namespace Cwiczenia5
 
             for (int i = 0; i<=n; i++)
             {
-                for(int j=0;j<=n;j++)
+                int j;
+                for(j=0;j<=n*2;j++)
                 {
                     Console.Write("*");
                 }
+                Console.WriteLine(); 
+            }
+            
+            for (int k = 0 ; k<=n; k++)
+            {
+                Console.ForegroundColor = ConsoleColor.White;
+                
+                for (int l = 0 ; l<=n*2; l++)
+                {
+                    Console.SetCursorPosition(l,k);
+                    if (l==2*k)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("*");
+                        break;
+                    }
+                    Thread.Sleep(czas /k);
+                }
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine();
             }
             Console.ReadLine();
