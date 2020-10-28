@@ -12,7 +12,7 @@ namespace Cwiczenia5
     {
         static void Main(string[] args)
         {
-            Zadanie4();
+            Zadanie5();
         }
         static void Zadanie1()
         {
@@ -97,51 +97,58 @@ namespace Cwiczenia5
             }
             Console.ReadLine();
         }
-        static void Zadanie4()//TO DO I 5 do TEGO
+        static void Zadanie4()
         {
-            int n,l=0;
-            int szerokosc = Console.WindowWidth / 2;
+            int n,h=0;
+            int srodek = Console.WindowWidth / 2;
             int wysokosc = Console.WindowHeight;
             Console.WriteLine("Podaj długość boku kwadratu");
             n = int.Parse(Console.ReadLine());
-            int h = 0;
-                //pętla do rysowania kwadratu
-                for (int i = 0; i <= n; i++)
+            
+            
+            //pętla do rysowania kwadratu
+            while(h<wysokosc-n)
+            {
+                for (int i=0; i<=n; i++)
                 {
-                    if (i < n)
+                   
+                    Console.SetCursorPosition(srodek,h);
+                    for (int j=0; j<=n; j++)
                     {
-                        Console.SetCursorPosition(szerokosc + n, i);
-                        for (int k = 0; k <= n*2; k++)
-                        {
-
-                            if (k % 2 == 0)
-                                Console.Write("*");
-                            else
-                                Console.Write(" ");
-
-                            Thread.Sleep(100);
-                        }
-
-                        Console.WriteLine();
+                        Console.Write("*");   
                     }
-                    else
+                    if (i==0)
                     {
-                        Console.SetCursorPosition(szerokosc - 1, l);
-                        for (int k = 0; k <= 2 * n; k++)
-                        {
-
-                            if (k % 2 == 0)
-                                Console.Write("*");
-                            else
-                                Console.Write(" ");
-
-                            Thread.Sleep(100);
-                        }
-
-                        Console.WriteLine();
-                        l++;
+                        Console.SetCursorPosition(srodek,0);
+                        Console.Clear();
+                        Console.SetCursorPosition(srodek,h+n);
+                        for (int k = 0; k<=n;k++)
+                                Console.Write("*");     
                     }
+                    Console.WriteLine(); 
+                    h++;
                 }
+                Thread.Sleep(60);
+             }   
+            Console.ReadLine();
+        }
+        static void Zadanie5()
+        {
+            int wysokosc = Console.WindowWidth(), szerokosc = Console.WindowHeight();
+            int n;
+            if (wysokosc>szerokosc)
+                n=szerokosc;
+            else
+                n=wysokosc;
+
+            for (int i = 0; i<=n; i++)
+            {
+                for(int j=0;j<=n;j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
             Console.ReadLine();
         }
         static void Zadanie6()
