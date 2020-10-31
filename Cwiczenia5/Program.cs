@@ -12,7 +12,7 @@ namespace Cwiczenia5
     {
         static void Main(string[] args)
         {
-            Zadanie5();
+            Zadanie4();
         }
         static void Zadanie1()
         {
@@ -99,37 +99,35 @@ namespace Cwiczenia5
         }
         static void Zadanie4()
         {
-            int n,h=0;
-            int srodek = Console.WindowWidth / 2;
-            int wysokosc = Console.WindowHeight;
-            Console.WriteLine("Podaj długość boku kwadratu");
+            int n, wysokosc = Console.WindowHeight, kol = Console.WindowWidth / 2, h = 0;
+            Console.WriteLine("Proszę podać długość boku kwadratu");
             n = int.Parse(Console.ReadLine());
-            
-            
-            //pętla do rysowania kwadratu
-            while(h<wysokosc-n)
+            Console.Clear();
+
+            for (int i = 0; i <= n; i++)
             {
-                for (int i=0; i<=n; i++)
+                Console.SetCursorPosition(kol, i);
+                for (int j = 0; j <= n; j++)
+                    Console.Write("*");
+                Console.WriteLine();
+                Thread.Sleep(200);
+            }
+
+            while (h < wysokosc)
+            {
+                for (int c = 0; c <= n; c++)
                 {
-                   
-                    Console.SetCursorPosition(srodek,h);
-                    for (int j=0; j<=n; j++)
-                    {
-                        Console.Write("*");   
-                    }
-                    if (i==0)
-                    {
-                        Console.SetCursorPosition(srodek,0);
-                        Console.Clear();
-                        Console.SetCursorPosition(srodek,h+n);
-                        for (int k = 0; k<=n;k++)
-                                Console.Write("*");     
-                    }
-                    Console.WriteLine(); 
-                    h++;
+                    Console.SetCursorPosition(kol, h);
+                    for (int d = 0; d <= n; d++)
+                        Console.Write(" ");
+                    Console.SetCursorPosition(kol, h + n);
+                    for (int e = 0; e <= n; e++)
+                        Console.Write("*");
                 }
-                Thread.Sleep(60);
-             }   
+                Console.WriteLine();
+                Thread.Sleep(200);
+                h++;
+            }
             Console.ReadLine();
         }
         static void Zadanie5()
