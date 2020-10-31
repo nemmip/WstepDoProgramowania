@@ -11,7 +11,7 @@ namespace PracaDomowa3_1
     {
         static void Main(string[] args)
         {
-            Zadanie3_15();
+            Zadanie7();
         }
         static void Zadanie1()
         {
@@ -142,18 +142,21 @@ namespace PracaDomowa3_1
         }
         static void Zadanie7()
         {
+            string napis = "Lubię programować";
+            int kol = 0, wier = 2;
+            int bufor = Console.WindowWidth;
+            int maxKolNapisu = bufor - napis.Length;
             Console.BackgroundColor = ConsoleColor.DarkRed;
             Console.Clear();
             Console.ForegroundColor = ConsoleColor.DarkYellow;
-            string napis = "Lubię programować";
 
-            for (int i = 0; i <= Console.WindowWidth - napis.Length; i++)
+            while (kol<maxKolNapisu)
             {
-                Console.SetCursorPosition(i, 0);
-                Console.WriteLine(napis);
+                Console.SetCursorPosition(kol, wier);
+                Console.Write(" " + napis);
+                kol++;
                 Thread.Sleep(100);
-                Console.Clear();
-            }
+            }            
             Console.ReadLine();
         }
         static void Zadanie8()
@@ -184,46 +187,46 @@ namespace PracaDomowa3_1
             n = int.Parse(Console.ReadLine());
             // A
 
-            //for (int i=0; i<=n; i++)
-            //{
-            //    for (int j = 0; j < n; j++)
-            //    {
-            //        if (j < i)
-            //            Console.Write('*');
-            //        else
-            //            Console.Write(' ');
-            //    }
-            //    Console.WriteLine();
-            //}
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j < i)
+                        Console.Write('*');
+                    else
+                        Console.Write(' ');
+                }
+                Console.WriteLine();
+            }
 
             // B
 
-            //for (int i = n; i >= 0; i--)
-            //{
-            //    for (int j = 0; j < n; j++)
-            //    {
-            //        if (j<i)
-            //            Console.Write('*');
-            //        else
-            //            Console.Write(' ');
-            //    }
-            //    Console.WriteLine();
-            //}
+            for (int i = n; i >= 0; i--)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    if (j < i)
+                        Console.Write('*');
+                    else
+                        Console.Write(' ');
+                }
+                Console.WriteLine();
+            }
 
             // C
 
-            //for (int i = 0; i <= n; i++)
-            //{
-            //    for (int j = n; j >= 0; j--)
-            //    {
-            //        if (j < i)
-            //            Console.Write('*');
-            //        else
-            //            Console.Write(' ');
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.ReadLine();
+            for (int i = 0; i <= n; i++)
+            {
+                for (int j = n; j >= 0; j--)
+                {
+                    if (j < i)
+                        Console.Write('*');
+                    else
+                        Console.Write(' ');
+                }
+                Console.WriteLine();
+            }
+            Console.ReadLine();
 
             // D
 
