@@ -11,7 +11,7 @@ namespace Cwiczenia6
     {
         static void Main(string[] args)
         {
-            Zadanie4_8();
+            Zadanie3();
         }
         static void Zadanie1()
         {
@@ -59,6 +59,7 @@ namespace Cwiczenia6
             const int wiersz = 5, liczbaNagrod = 6;
             Random random = new Random();
 
+            Console.CursorVisible = false;
 
             int[,] tablica = new int[liczbaNagrod, 2];
             char[] znaki = new char[Console.WindowWidth];
@@ -74,7 +75,6 @@ namespace Cwiczenia6
                 Console.Write((char)tablica[i, 1]);
                 znaki[tablica[i,0]] = (char)tablica[i, 1];
             }
-
             //zmienna iteracyjna przez węża
             int j = liczbaNagrod-1;
             // tablica węża
@@ -87,11 +87,14 @@ namespace Cwiczenia6
                 Console.SetCursorPosition(i, wiersz);
                 if (znaki[i] >= 65 && znaki[i] < 91)
                 {
-                    waz[j] = znaki[i];
                     Console.Write(" ");
+                    waz[j] = znaki[i];
+
                     foreach (var literka in waz)
-                        Console.Write(literka);
-                    
+                    {
+                        if (literka != 0)
+                            Console.Write(literka);
+                    }
                     if (waz[j] % 5 == 0)
                         punkty += 10;
                     else
@@ -100,15 +103,25 @@ namespace Cwiczenia6
                 }
                 else
                 {
+                    Console.SetCursorPosition(0, wiersz);
                     Console.Write(" ");
-                    foreach (var literka in waz)
-                        Console.Write(literka);   
+                    Console.SetCursorPosition(i, wiersz);
+                    if (i == 0)
+                        Console.Write(waz[liczbaNagrod]);
+                    else
+                    {
+                        Console.Write(" ");
+                        foreach (var literka in waz)
+                        {
+                            if (literka != 0)
+                                Console.Write(literka);
+                        }
+                    }
                 }
                 Thread.Sleep(100);
                 Console.SetCursorPosition(0, Console.WindowHeight);
-                Console.Write($"Punkty: {punkty}");
+                Console.WriteLine($"Punkty: {punkty}");
             }
-
             Console.ReadLine();
         }
         static void Zadanie4()
