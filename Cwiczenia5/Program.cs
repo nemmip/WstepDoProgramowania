@@ -12,7 +12,7 @@ namespace Cwiczenia5
     {
         static void Main(string[] args)
         {
-            Zadanie4();
+            Zadanie5();
         }
         static void Zadanie1()
         {
