@@ -81,7 +81,8 @@ namespace Cwiczenia9
                 if (int.TryParse(znak.ToString(), out int cyfra)) //sprawdzenie czy dany znak jest typu całkowitoliczbowego
                     liczba += znak; //jeśli tak to dodaj ten znak do nowego łańcucha
             }
-            return int.Parse(liczba);   //dokonaj konwersji na int i zwróć liczbę
+            int.TryParse(liczba, out int wynik);
+            return wynik;   //dokonaj konwersji na int i zwróć liczbę
         }
         static string Zadanie2(string tekst)
         {
